@@ -1,57 +1,50 @@
-/* 
- * Place all functions, classes, and/or DB schemas here for a single 
- * model.
- */
-
-/* Step 1
- *
- * TODO: import mongoose connection
- * NOTE: skip this if you are not using mongoose
+/* Step 1 import express
  *
  */
-//const mongoose = require('./connection.js')
-
-/* Step 1 alternative
- *
- * TODO: make a global variable to act as an in memory database. 
- * NOTE: doing this WILL NOT persist your data and you will loose
- * your data once you stop running your server.
- *
- */
-global.sampleModel = [];
+const express = require('express')
 
 /* Step 2
  *
- * TODO: create model schema 
- * NOTE: skip this if you are not using mongoose
+ * Import the api files from the models
  *
+ * TODO: change the file path to the models file you'll need to use.
+ * TODO: rename this from `templateApi` to something more sensible (e.g:
+ * `shopsAPI`)
+ *
+ * NOTE: You may need to import more than one API to create the 
+ * controller you need.
+ * 
  */
-//const SampleModelSchema = new mongoose.Schema({
-//  name: String
-//})
+const templateApi = require('../models/clothingPopUp.js')
 
-/* Step 3
+/* Step 3 
+ * 
+ * Create a new router.
  *
- * TODO: create collection API
- * NOTE: skip this if you are not using mongoose
- *
+ * the router will "contain" all the request handlers that you define in this file.
+ * TODO: rename this from templateRouter to something that makes sense. (e.g:
+ * `shopRouter`)
  */
-//const SampleCollection = mongoose.model('Sample', SampleModelSchema)
+const templateRouter = express.Router()
 
 /* Step 4
- *
- * TODO: delete this it's just a sample
- *
+ * 
+ * TODO: Put all request handlers here
  */
-function getHelloWorldString() {
-  return 'hello world'
-}
 
 /* Step 5
  *
- * TODO: export all functions from this file by adding their names as keys to this
- * object
+ * TODO: delete this handler; it's just a sample
+ */ 
+templateRouter.get('/', (req, res) => {
+  res.send(templateApi.getHelloWorldString())
+})
+
+/* Step 6
+ *
+ * Export the router from the file.
+ *
  */
 module.exports = {
-  getHelloWorldString
+  templateRouter
 }
