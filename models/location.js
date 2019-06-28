@@ -50,11 +50,16 @@ function getAllLocations() {
   return LocationCollection.find()
 }
 
+function addLocation (location) {
+  return LocationCollection.create(location)
+}
+
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
  * object
  */
 module.exports = {
-  getAllLocations
+  getAllLocations,
+  addLocation
 }

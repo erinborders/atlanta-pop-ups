@@ -43,6 +43,13 @@ locationRouter.get('/', (req, res) => {
     })
 })
 
+locationRouter.post('/', (req, res) => {
+    locationApi.addLocation(req.body)
+        .then(() => {
+            res.send('new location created')
+        })
+})
+
 /* Step 6
  *
  * Export the router from the file.
