@@ -18,7 +18,7 @@ const methodOverride = require('method-override')
  *
  */
 const { locationRouter } = require('./controllers/location.js')
-
+const { foodRouter } = require('./controllers/foodPopUp.js')
 
 /* Step 3
  *
@@ -62,6 +62,7 @@ app.set('view engine', 'hbs')
  * the paths defined in the router.
  */
 app.use('/locations', locationRouter)
+app.use('/locations/:locationId/food', foodRouter)
 
 /* Step 5
  *

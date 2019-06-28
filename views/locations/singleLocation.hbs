@@ -1,5 +1,9 @@
 <h2>{{location.neighborhood}} Pop Ups</h2>
 
+<form action="/locations" method="get">
+    <input type="submit" value="Back to Home">
+</form>
+
 <form method="POST" action="/locations/{{location._id}}?_method=DELETE">
   <input type="submit" value="Delete Location" />
 </form>

@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const templateApi = require('../models/clothingPopUp.js')
+const foodApi = require('../models/foodPopUp.js')
 
 /* Step 3 
  * 
@@ -25,7 +25,7 @@ const templateApi = require('../models/clothingPopUp.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const templateRouter = express.Router()
+const foodRouter = express.Router()
 
 /* Step 4
  * 
@@ -36,7 +36,7 @@ const templateRouter = express.Router()
  *
  * TODO: delete this handler; it's just a sample
  */ 
-templateRouter.get('/', (req, res) => {
+foodRouter.get('/', (req, res) => {
   res.send(templateApi.getHelloWorldString())
 })
 
@@ -46,5 +46,5 @@ templateRouter.get('/', (req, res) => {
  *
  */
 module.exports = {
-  templateRouter
+  foodRouter
 }
