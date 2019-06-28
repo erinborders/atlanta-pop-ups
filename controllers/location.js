@@ -46,7 +46,8 @@ locationRouter.get('/', (req, res) => {
 locationRouter.post('/', (req, res) => {
     locationApi.addLocation(req.body)
         .then(() => {
-            res.send('new location created')
+            // res.send('new location created')
+            res.redirect('/locations')
         })
 })
 
@@ -64,7 +65,8 @@ locationRouter.get('/:locationId', (req, res) => {
 locationRouter.delete('/:locationId', (req, res) => {
     locationApi.deleteLocation(req.params.locationId)
         .then(() => {
-            res.send('location deleted')
+            // res.send('location deleted')
+            res.redirect('/locations')
         })
 })
 
