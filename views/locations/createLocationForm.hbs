@@ -2,3 +2,16 @@
 
 <p>Don't see your neighborhood listed? Add it!</p>
 
+<div>
+    <form action="/locations" method="post">
+    
+    <label for="neighborhood">Neighborhood:</label>
+    <input type="text" name="neighborhood" id="neighborhood">
+
+    <input type="submit" value="Submit">
+    </form>
+</div>
+
+<form action="/locations" method="get">
+    <input type="submit" value="Back to Home">
+</form>
