@@ -4,7 +4,9 @@
 <a href="/locations/{{_id}}">{{neighborhood}}</a>
 {{/each}}
 
-<button>Add Location</button>
+<form action="/locations/new" method="get">
+    <input type="submit" value="Add a Neighborhood">
+</form>
 
 <p>
     All the pop ups in your area in one place.
@@ -12,10 +14,10 @@
     event again.
 </p>
 
-<button>Create</button>
+<button>Add a Pop Up</button>
 <button>Food</button>
 <button>Clothes</button>
 
 <div>
-    
+
 </div>

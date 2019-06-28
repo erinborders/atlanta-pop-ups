@@ -50,6 +50,10 @@ locationRouter.post('/', (req, res) => {
         })
 })
 
+locationRouter.get('/new', (req, res) => {
+    res.render('locations/createLocationForm')
+})
+
 locationRouter.get('/:locationId', (req, res) => {
     locationApi.getLocation(req.params.locationId)
         .then((location) => {
