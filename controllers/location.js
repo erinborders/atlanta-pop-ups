@@ -53,7 +53,7 @@ locationRouter.post('/', (req, res) => {
 locationRouter.get('/:locationId', (req, res) => {
     locationApi.getLocation(req.params.locationId)
         .then((location) => {
-            res.send(location)
+            res.render('locations/singleLocation', {location})
         })
 })
 
