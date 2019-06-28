@@ -54,6 +54,10 @@ function addLocation (location) {
   return LocationCollection.create(location)
 }
 
+function getLocation (locationId) {
+  return LocationCollection.findById(locationId)
+}
+
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
@@ -61,5 +65,6 @@ function addLocation (location) {
  */
 module.exports = {
   getAllLocations,
-  addLocation
+  addLocation,
+  getLocation
 }

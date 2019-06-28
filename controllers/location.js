@@ -38,8 +38,8 @@ const locationRouter = express.Router()
  */ 
 locationRouter.get('/', (req, res) => {
   locationApi.getAllLocations()
-    .then((popups) => {
-        res.send(popups)
+    .then((locations) => {
+        res.send(locations)
     })
 })
 
@@ -47,6 +47,13 @@ locationRouter.post('/', (req, res) => {
     locationApi.addLocation(req.body)
         .then(() => {
             res.send('new location created')
+        })
+})
+
+locationRouter.get('/:locationId', (req, res) => {
+    locationApi.getLocation(req.params.locationId)
+        .then((location) => {
+            res.send(location)
         })
 })
 
