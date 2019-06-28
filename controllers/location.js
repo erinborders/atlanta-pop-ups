@@ -57,6 +57,13 @@ locationRouter.get('/:locationId', (req, res) => {
         })
 })
 
+locationRouter.delete('/:locationId', (req, res) => {
+    locationApi.deleteLocation(req.params.locationId)
+        .then(() => {
+            res.send('location deleted')
+        })
+})
+
 /* Step 6
  *
  * Export the router from the file.

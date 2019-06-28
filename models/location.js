@@ -58,6 +58,10 @@ function getLocation (locationId) {
   return LocationCollection.findById(locationId)
 }
 
+function deleteLocation (locationId) {
+  return LocationCollection.findByIdAndDelete(locationId)
+}
+
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
@@ -66,5 +70,6 @@ function getLocation (locationId) {
 module.exports = {
   getAllLocations,
   addLocation,
-  getLocation
+  getLocation,
+  deleteLocation
 }
