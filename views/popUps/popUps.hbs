@@ -1,3 +1,5 @@
-<h1>This is a sample hbs file</h1>
+<h1>Atlanta Pop Ups</h1>
 
-<p> please delete this when you start your project. </p>
+{{#each locations}}
+<a href="/locations/{{_id}}">{{neighborhood}}</a>
+{{/each}}

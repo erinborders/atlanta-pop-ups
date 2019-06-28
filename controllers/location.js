@@ -39,7 +39,7 @@ const locationRouter = express.Router()
 locationRouter.get('/', (req, res) => {
   locationApi.getAllLocations()
     .then((locations) => {
-        res.send(locations)
+        res.render('popUps/popUps', {locations})
     })
 })
 
