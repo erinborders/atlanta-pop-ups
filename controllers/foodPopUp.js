@@ -36,10 +36,18 @@ const foodRouter = express.Router({ mergeParams: true })
  *
  * TODO: delete this handler; it's just a sample
  */ 
+// foodRouter.get('/', (req, res) => {
+//   foodApi.getAllFood() 
+//     .then((foodPopUps) => {
+//       res.send(foodPopUps)
+//     })
+// })
+
 foodRouter.get('/', (req, res) => {
-  foodApi.getAllFood() 
-    .then((foodPopUps) => {
-      res.send(foodPopUps)
+  req.body.locationId = req.params.locationId
+  foodApi.getFoodByLocationId(req.params.locationId)
+    .then((locationFoodPopUps) => {
+      res.send(locationFoodPopUps)
     })
 })
 

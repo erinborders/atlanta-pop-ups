@@ -60,6 +60,10 @@ function getAllFood() {
   return FoodCollection.find()
 }
 
+function getFoodByLocationId (locationId) {
+  return FoodCollection.find({locationId: locationId})
+}
+
 function addFood (food) {
   return FoodCollection.create(food)
 }
@@ -91,5 +95,6 @@ module.exports = {
   getOneFood,
   editFood,
   deleteFood,
-  deleteAllFood
+  deleteAllFood,
+  getFoodByLocationId
 }
