@@ -62,8 +62,8 @@ app.set('view engine', 'hbs')
  * the paths defined in the router.
  */
 app.use('/locations', locationRouter)
-app.use('/locations/:locationId/food', foodRouter)
-
+app.use('/locations/:locationId/food', foodRouter)//do i put the whole url path here?
+app.use('/locations/:locationId/clothing', clothingRouter)
 /* Step 5
  *
  * Set the port the server is to run on
