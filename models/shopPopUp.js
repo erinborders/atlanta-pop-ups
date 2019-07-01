@@ -59,39 +59,39 @@ const ShopSchema = new mongoose.Schema({
  * NOTE: skip this if you are not using mongoose
  *
  */
-const FoodCollection = mongoose.model('Food', FoodSchema)
+const ShopCollection = mongoose.model('Shop', ShopSchema)
 
 /* Step 4
  *
  * TODO: delete this it's just a sample
  *
  */
-function getAllFood() {
-  return FoodCollection.find()
+function getAllShops() {
+  return ShopCollection.find()
 }
 
-function getFoodByLocationId (locationId) {
-  return FoodCollection.find({locationId: locationId})
+function getShopsByLocationId (locationId) {
+  return ShopCollection.find({locationId: locationId})
 }
 
-function addFood (food) {
-  return FoodCollection.create(food)
+function addShop (shop) {
+  return ShopCollection.create(shop)
 }
 
-function getOneFood (foodId) {
-  return FoodCollection.findById(foodId)
+function getOneShop (shopId) {
+  return ShopCollection.findById(shopId)
 }
 
-function editFood (foodId, newFood) {
-  return FoodCollection.findByIdAndUpdate(foodId, newFood)
+function editShop (shopId, newShop) {
+  return ShopCollection.findByIdAndUpdate(shopId, newShop)
 }
 
-function deleteFood (foodId) {
-  return FoodCollection.findByIdAndDelete(foodId)
+function deleteShop (shopId) {
+  return ShopCollection.findByIdAndDelete(shopId)
 }
 
-function deleteAllFood () {
-  return FoodCollection.deleteMany()
+function deleteAllShops () {
+  return ShopCollection.deleteMany()
 }
 
 /* Step 5
@@ -100,11 +100,11 @@ function deleteAllFood () {
  * object
  */
 module.exports = {
-  getAllFood,
-  addFood,
-  getOneFood,
-  editFood,
-  deleteFood,
-  deleteAllFood,
-  getFoodByLocationId
+  getAllShops,
+  addShop,
+  getOneShop,
+  editShop,
+  deleteShop,
+  deleteAllShops,
+  getShopsByLocationId
 }
