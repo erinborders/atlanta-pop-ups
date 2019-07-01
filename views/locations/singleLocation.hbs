@@ -12,6 +12,15 @@
 <button>Food</button>
 <button>Clothes</button>
 
-<div>
-
+<div id="{{location.neighborhood}}-pop-ups">
+  {{#each food}}
+    {{restaurant}}
+    {{address}}
+    {{time}}
+  {{/each}}
+  {{#each shops}}
+    {{shop}}
+    {{address}}
+    {{time}}
+  {{/each}}
 </div>

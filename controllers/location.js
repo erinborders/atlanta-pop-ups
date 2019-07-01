@@ -61,9 +61,13 @@ locationRouter.get('/new', (req, res) => {
 })
 
 locationRouter.get('/:locationId', (req, res) => {
-    locationApi.getLocation(req.params.locationId)
-        .then((location) => {
-            res.render('locations/singleLocation', {location})
+    req.body.locationId = req.params.locationId
+    let getLocation = locationApi.getLocation(req.params.locationId)
+    let getFood = foodApi.getFoodByLocationId(req.params.locationId)
+    let getShops = shopApi.getShopsByLocationId(req.params.locationId)
+    return Promise.all([getLocation, getFood, getShops])
+        .then(([location, food, shops]) => {
+            res.render('locations/singleLocation', {location, food, shops})
         })
 })
 

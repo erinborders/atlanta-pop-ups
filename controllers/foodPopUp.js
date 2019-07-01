@@ -37,21 +37,15 @@ const foodRouter = express.Router({ mergeParams: true })
  * TODO: delete this handler; it's just a sample
  */ 
 
- //USE IN THE LOCATION CONTROLLER
 // foodRouter.get('/', (req, res) => {
-//   foodApi.getAllFood() 
-//     .then((foodPopUps) => {
-//       res.send(foodPopUps)
+//   req.body.locationId = req.params.locationId
+//   foodApi.getFoodByLocationId(req.params.locationId)
+//     .then((locationFoodPopUps) => {
+//       // res.send(locationFoodPopUps)
+//       console.log(locationFoodPopUps)
+//       res.render('locations/singleLocation', {locationFoodPopUps})
 //     })
 // })
-
-foodRouter.get('/', (req, res) => {
-  req.body.locationId = req.params.locationId
-  foodApi.getFoodByLocationId(req.params.locationId)
-    .then((locationFoodPopUps) => {
-      res.send(locationFoodPopUps)
-    })
-})
 
 foodRouter.post('/', (req, res) => {
   req.body.locationId = req.params.locationId
