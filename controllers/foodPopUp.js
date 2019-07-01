@@ -61,6 +61,17 @@ foodRouter.post('/', (req, res) => {
     })
 })
 
+foodRouter.get('/new', (req, res) => {
+  res.render('food/createFoodForm')
+})
+
+foodRouter.get('/:foodId/edit', (req, res) => {
+  foodApi.getOneFood(req.params.foodId)
+    .then((food) => {
+      res.render('food/editFoodForm', {food})
+    })
+})
+
 foodRouter.get('/:foodId', (req, res) => {
   foodApi.getOneFood(req.params.foodId)
     .then((foodPopUp) => {

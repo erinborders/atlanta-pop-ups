@@ -61,6 +61,17 @@ shopRouter.post('/', (req, res) => {
     })
 })
 
+shopRouter.get('/new', (req, res) => {
+  res.render('shops/createShopForm')
+})
+
+shopRouter.get('/:shopId/edit', (req, res) => {
+  shopApi.getOneShop(req.params.shopId)
+    .then((shop) => {
+      res.render('shops/editShopForm', {shop})
+    })
+})
+
 shopRouter.get('/:shopId', (req, res) => {
   shopApi.getOneShop(req.params.shopId)
     .then((shopPopUp) => {
