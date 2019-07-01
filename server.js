@@ -19,7 +19,7 @@ const methodOverride = require('method-override')
  */
 const { locationRouter } = require('./controllers/location.js')
 const { foodRouter } = require('./controllers/foodPopUp.js')
-
+const { shopRouter } = require('./controllers/shopPopUp.js')
 /* Step 3
  *
  * Register middleware...
@@ -62,8 +62,8 @@ app.set('view engine', 'hbs')
  * the paths defined in the router.
  */
 app.use('/locations', locationRouter)
-app.use('/locations/:locationId/food', foodRouter)//do i put the whole url path here?
-// app.use('/locations/:locationId/clothing', clothingRouter)
+app.use('/locations/:locationId/food', foodRouter)
+app.use('/locations/:locationId/shops', shopRouter)
 /* Step 5
  *
  * Set the port the server is to run on

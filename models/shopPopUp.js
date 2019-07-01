@@ -26,12 +26,13 @@ const mongoose = require('./connection.js')
  * NOTE: skip this if you are not using mongoose
  *
  */
-const FoodSchema = new mongoose.Schema({
- restaurant: {
+const ShopSchema = new mongoose.Schema({
+ shop: {
    type: String,
    required: true
  },
- cuisine: {
+ aesthetic: String,
+ product: {
    type: String,
    required: true
  },
@@ -42,13 +43,13 @@ const FoodSchema = new mongoose.Schema({
    required: true
  },
  address: {
-  type: String,
-  required: true
-},
-time: {
-  type: Date,
-  default: Date.now
-},
+   type: String,
+   required: true
+ },
+ time: {
+   type: Date,
+   default: Date.now
+ },
  locationId: mongoose.Types.ObjectId
 })
 
