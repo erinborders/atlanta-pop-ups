@@ -56,6 +56,24 @@ locationRouter.post('/', (req, res) => {
         })
 })
 
+locationRouter.get('/food', (req, res) => {
+    let getAllLocations = locationApi.getAllLocations()
+    let getAllFood = foodApi.getAllFood()
+    return Promise.all([getAllLocations, getAllFood])
+        .then(([locations, food]) => {
+            res.render('locations/foodOnly', {locations, food})
+        })
+})
+
+locationRouter.get('/shops', (req, res) => {
+    let getAllLocations = locationApi.getAllLocations()
+    let getAllShops = shopApi.getAllShops()
+    return Promise.all([getAllLocations, getAllShops])
+        .then(([locations, shops]) => {
+            res.render('locations/shopsOnly', {locations, shops})
+        })
+})
+
 locationRouter.get('/new', (req, res) => {
     res.render('locations/createLocationForm')
 })

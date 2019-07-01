@@ -1,0 +1,25 @@
+<h1>Atlanta Shop Pop Ups</h1>
+
+{{#each locations}}
+<a href="/locations/{{_id}}">{{neighborhood}}</a>
+{{/each}}
+
+<form action="/locations/new" method="get">
+    <input type="submit" value="Add a Neighborhood">
+</form>
+
+<p>
+    All the shop pop ups in your area in one place.
+    Never miss out on your favorite shop
+    events again.
+</p>
+
+<div>
+{{#each shops}}
+        <div>
+            {{shop}}
+            {{address}}
+            {{time}}
+        </div>
+    {{/each}}
+</div>

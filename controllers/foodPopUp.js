@@ -41,7 +41,6 @@ foodRouter.get('/', (req, res) => {
   // req.body.locationId = req.params.locationId
   foodApi.getFoodByLocationId(req.params.locationId)
     .then((locationFoodPopUps) => {
-      console.log(locationFoodPopUps)
       res.render('food/singleLocationFoodOnly', {locationFoodPopUps})
     })
 })
