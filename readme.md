@@ -31,4 +31,4 @@ The location page - this is what you'll see when you select a specific location 
 
 The individual pop up page - this is what you'll see when you click on any particular pop up. You will be able to see all the details of the pop up and have the opportunity to either edit the information or delete the pop up entirely.
 
-![Wireframe](https://github.com/erinborders/atlanta-pop-ups/blob/master/images/Atlanta%20pop%20up%20location%20page.png)
+![Wireframe](https://github.com/erinborders/atlanta-pop-ups/blob/master/images/Atlanta%20pop%20up%20page.png)
