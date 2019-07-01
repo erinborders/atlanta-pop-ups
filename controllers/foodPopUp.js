@@ -37,7 +37,10 @@ const foodRouter = express.Router()
  * TODO: delete this handler; it's just a sample
  */ 
 foodRouter.get('/', (req, res) => {
-  res.send(templateApi.getHelloWorldString())
+  foodApi.getAllFood() 
+    .then((food) => {
+      res.send(food)
+    })
 })
 
 /* Step 6

@@ -55,8 +55,8 @@ const FoodCollection = mongoose.model('Food', FoodSchema)
  * TODO: delete this it's just a sample
  *
  */
-function getHelloWorldString() {
-  return 'hello world'
+function getAllFood() {
+  return FoodCollection.find()
 }
 
 /* Step 5
@@ -65,5 +65,5 @@ function getHelloWorldString() {
  * object
  */
 module.exports = {
-  getHelloWorldString
+  getAllFood
 }
