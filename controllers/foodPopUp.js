@@ -43,6 +43,13 @@ foodRouter.get('/', (req, res) => {
     })
 })
 
+foodRouter.post('/', (req, res) => {
+  foodApi.addFood(req.body)
+    .then(() => {
+      res.send('food pop up created')
+    })
+})
+
 /* Step 6
  *
  * Export the router from the file.
