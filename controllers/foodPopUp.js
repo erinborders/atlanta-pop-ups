@@ -57,6 +57,13 @@ foodRouter.get('/:foodId', (req, res) => {
     })
 })
 
+foodRouter.put('/:foodId', (req, res) => {
+  foodApi.editFood(req.params.foodId, req.body)
+    .then(() => {
+      res.send('food pop up edited')
+    })
+})
+
 /* Step 6
  *
  * Export the router from the file.
