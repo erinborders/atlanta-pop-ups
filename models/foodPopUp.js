@@ -71,6 +71,10 @@ function editFood (foodId, newFood) {
   return FoodCollection.findByIdAndUpdate(foodId, newFood)
 }
 
+function deleteFood (foodId) {
+  return FoodCollection.findByIdAndDelete(foodId)
+}
+
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
@@ -80,5 +84,6 @@ module.exports = {
   getAllFood,
   addFood,
   getOneFood,
-  editFood
+  editFood,
+  deleteFood
 }

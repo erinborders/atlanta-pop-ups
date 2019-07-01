@@ -64,6 +64,13 @@ foodRouter.put('/:foodId', (req, res) => {
     })
 })
 
+foodRouter.delete('/:foodId', (req, res) => {
+  foodApi.deleteFood(req.params.foodId)
+    .then(() => {
+      res.send('food pop up deleted')
+    })
+})
+
 /* Step 6
  *
  * Export the router from the file.
