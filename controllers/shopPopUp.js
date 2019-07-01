@@ -25,7 +25,7 @@ const shopApi = require('../models/shopPopUp.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const shopRouter = express.Router()
+const shopRouter = express.Router({ mergeParams: true })
 
 /* Step 4
  * 
@@ -36,8 +36,50 @@ const shopRouter = express.Router()
  *
  * TODO: delete this handler; it's just a sample
  */ 
+
+ //USE IN THE LOCATION CONTROLLER
+// shopRouter.get('/', (req, res) => {
+//   shopApi.getAllShops() 
+//     .then((shopPopUps) => {
+//       res.send(shopPopUps)
+//     })
+// })
+
 shopRouter.get('/', (req, res) => {
-  res.send(templateApi.getHelloWorldString())
+  req.body.locationId = req.params.locationId
+  shopApi.getShopsByLocationId(req.params.locationId)
+    .then((locationShopPopUps) => {
+      res.send(locationShopPopUps)
+    })
+})
+
+shopRouter.post('/', (req, res) => {
+  req.body.locationId = req.params.locationId
+  shopApi.addShop(req.body)
+    .then(() => {
+      res.send('shop pop up created')
+    })
+})
+
+shopRouter.get('/:shopId', (req, res) => {
+  shopApi.getOneShop(req.params.shopId)
+    .then((shopPopUp) => {
+      res.send(shopPopUp)
+    })
+})
+
+shopRouter.put('/:shopId', (req, res) => {
+  shopApi.editShop(req.params.shopId, req.body)
+    .then(() => {
+      res.send('shop pop up edited')
+    })
+})
+
+shopRouter.delete('/:shopId', (req, res) => {
+  shopApi.deleteShop(req.params.shopId)
+    .then(() => {
+      res.send('shop pop up deleted')
+    })
 })
 
 /* Step 6
