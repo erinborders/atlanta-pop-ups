@@ -36,6 +36,8 @@ const foodRouter = express.Router({ mergeParams: true })
  *
  * TODO: delete this handler; it's just a sample
  */ 
+
+ //USE IN THE LOCATION CONTROLLER
 // foodRouter.get('/', (req, res) => {
 //   foodApi.getAllFood() 
 //     .then((foodPopUps) => {
@@ -52,6 +54,7 @@ foodRouter.get('/', (req, res) => {
 })
 
 foodRouter.post('/', (req, res) => {
+  req.body.locationId = req.params.locationId
   foodApi.addFood(req.body)
     .then(() => {
       res.send('food pop up created')
@@ -78,8 +81,6 @@ foodRouter.delete('/:foodId', (req, res) => {
       res.send('food pop up deleted')
     })
 })
-
-// 5d1690a817355d23580ed63c
 
 /* Step 6
  *
