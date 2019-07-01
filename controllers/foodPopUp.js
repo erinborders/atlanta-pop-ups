@@ -25,7 +25,7 @@ const foodApi = require('../models/foodPopUp.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const foodRouter = express.Router()
+const foodRouter = express.Router({ mergeParams: true })
 
 /* Step 4
  * 

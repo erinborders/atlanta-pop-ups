@@ -39,7 +39,8 @@ const FoodSchema = new mongoose.Schema({
    type: String,
    enum: ['$', '$$', '$$$', '$$$$'],
    required: true
- }
+ },
+ locationId: mongoose.Types.ObjectId
 })
 
 /* Step 3
@@ -75,6 +76,10 @@ function deleteFood (foodId) {
   return FoodCollection.findByIdAndDelete(foodId)
 }
 
+function deleteAllFood () {
+  return FoodCollection.deleteMany()
+}
+
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
@@ -85,5 +90,6 @@ module.exports = {
   addFood,
   getOneFood,
   editFood,
-  deleteFood
+  deleteFood,
+  deleteAllFood
 }
