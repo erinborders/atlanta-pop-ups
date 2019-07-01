@@ -38,8 +38,8 @@ const foodRouter = express.Router()
  */ 
 foodRouter.get('/', (req, res) => {
   foodApi.getAllFood() 
-    .then((food) => {
-      res.send(food)
+    .then((foodPopUps) => {
+      res.send(foodPopUps)
     })
 })
 
@@ -47,6 +47,13 @@ foodRouter.post('/', (req, res) => {
   foodApi.addFood(req.body)
     .then(() => {
       res.send('food pop up created')
+    })
+})
+
+foodRouter.get('/:foodId', (req, res) => {
+  foodApi.getOneFood(req.params.foodId)
+    .then((foodPopUp) => {
+      res.send(foodPopUp)
     })
 })
 

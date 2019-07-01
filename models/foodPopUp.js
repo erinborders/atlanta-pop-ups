@@ -63,6 +63,10 @@ function addFood (food) {
   return FoodCollection.create(food)
 }
 
+function getOneFood (foodId) {
+  return FoodCollection.findById(foodId)
+}
+
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
@@ -70,5 +74,6 @@ function addFood (food) {
  */
 module.exports = {
   getAllFood,
-  addFood
+  addFood,
+  getOneFood
 }
