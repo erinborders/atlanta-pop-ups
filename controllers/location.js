@@ -16,6 +16,8 @@ const express = require('express')
  * 
  */
 const locationApi = require('../models/location.js')
+const shopApi = require('../models/shopPopUp.js')
+const foodApi = require('../models/foodPopUp.js')
 
 /* Step 3 
  * 
@@ -37,9 +39,12 @@ const locationRouter = express.Router()
  * TODO: delete this handler; it's just a sample
  */ 
 locationRouter.get('/', (req, res) => {
-  locationApi.getAllLocations()
-    .then((locations) => {
-        res.render('locations/locations', {locations})
+  let getAllLocations = locationApi.getAllLocations()
+  let getAllShops = shopApi.getAllShops()
+  let getAllFood = foodApi.getAllFood()
+  return Promise.all([getAllLocations, getAllShops, getAllFood])
+    .then(([locations, shops, food]) => {
+        res.render('locations/locations', {locations, shops, food})
     })
 })
 
