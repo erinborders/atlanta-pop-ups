@@ -1,0 +1,11 @@
+body {
+    background: aliceblue;
+}
+
+h1, h2 {
+    font-family: 'Lobster', cursive;
+}
+
+p, a {
+    font-family: 'Oswald', sans-serif;
+}
