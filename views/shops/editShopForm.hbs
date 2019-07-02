@@ -1,0 +1,40 @@
+<h2>Edit Shop Pop Up Form</h2>
+
+<p>Need to make a change? Make it here!</p>
+
+<form action="/locations" method="get">
+    <input type="submit" value="Back to Home">
+</form>
+
+<div>
+    <form action="/locations/{{shop._id}}?_method=PUT" method="post">
+    
+    <label for="shop-name">Shop Name:</label>
+    <input type="text" name="shop" value="{{shop.shop}}" id="shop-name">
+
+    <label for="shop-aesthetic">Shop Aesthetic:</label>
+    <input type="text" name="aesthetic" value="{{shop.aesthetic}}" id="shop-aesthetic">
+
+    <label for="shop-product">Shop Product(s):</label>
+    <input type="text" name="product" value="{{shop.product}}" id="shop-product">
+
+    <label for="price">Price:</label>
+    <input type="text" name="price" value="{{shop.price}}" id="price" placeholder="$, $$, $$$, $$$$">
+
+    <label for="address">Address:</label>
+    <input type="text" name="address" value="{{shop.address}}" id="address">
+
+    <label for="date">Date:</label>
+    <input type="date" name="time" value="{{shop.time}}" id="date">
+
+    <input type="submit" value="Submit">
+    </form>
+</div>
+
+<form action="/locations" method="get">
+    <input type="submit" value="Back to Home">
+</form>
+
+<form action="/locations/{{shop.locationId}}/shops/{{shop._id}}?_method=DELETE" method="post">
+    <input type="submit" value="Delete Pop Up">
+</form>
