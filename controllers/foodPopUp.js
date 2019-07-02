@@ -55,7 +55,8 @@ foodRouter.post('/', (req, res) => {
 })
 
 foodRouter.get('/new', (req, res) => {
-  res.render('food/createFoodForm')
+  let locationId = req.params.locationId //to get locationId for food router
+  res.render('food/createFoodForm', {locationId})
 })
 
 foodRouter.get('/:foodId/edit', (req, res) => {

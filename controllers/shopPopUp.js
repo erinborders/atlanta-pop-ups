@@ -62,7 +62,8 @@ shopRouter.post('/', (req, res) => {
 })
 
 shopRouter.get('/new', (req, res) => {
-  res.render('shops/createShopForm')
+  let locationId = req.params.locationId
+  res.render('shops/createShopForm', {locationId})
 })
 
 shopRouter.get('/:shopId/edit', (req, res) => {

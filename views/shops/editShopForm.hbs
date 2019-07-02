@@ -7,7 +7,7 @@
 </form>
 
 <div>
-    <form action="/locations/{{shop._id}}?_method=PUT" method="post">
+    <form action="/locations/{{shop.locationId}}/shops/{{shop._id}}?_method=PUT" method="post">
     
     <label for="shop-name">Shop Name:</label>
     <input type="text" name="shop" value="{{shop.shop}}" id="shop-name">
