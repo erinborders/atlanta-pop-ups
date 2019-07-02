@@ -1,5 +1,9 @@
 <h1>Atlanta Shop Pop Ups</h1>
 
+<form action="/locations" method="get">
+    <input type="submit" value="Back to Home">
+</form>
+
 {{#each locations}}
 <a href="/locations/{{_id}}">{{neighborhood}}</a>
 {{/each}}

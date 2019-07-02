@@ -1,5 +1,9 @@
 <h2>Shop Pop Ups</h2>
 
+<form action="/locations" method="get">
+    <input type="submit" value="Back to Home">
+</form>
+
 {{#each locationShopPopUps}}
     <a href="/locations/{{locationId}}/shops/{{_id}}">{{shop}}</a>
 {{/each}}
