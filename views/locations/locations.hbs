@@ -20,14 +20,14 @@
 <div id="pop-ups">
     {{#each shops}}
         <div>
-            {{shop}}
+            <a href="/locations/{{locationId}}/shops/{{_id}}">{{shop}}</a>
             {{address}}
             {{time}}
         </div>
     {{/each}}
     {{#each food}}
         <div>
-            {{restaurant}}
+            <a href="/locations/{{locationId}}/food/{{_id}}">{{restaurant}}</a>
             {{address}}
             {{time}}
         </div>

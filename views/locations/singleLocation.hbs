@@ -14,12 +14,12 @@
 
 <div id="{{location.neighborhood}}-pop-ups">
   {{#each food}}
-    {{restaurant}}
+    <a href="/locations/{{locationId}}/food/{{_id}}">{{restaurant}}</a>
     {{address}}
     {{time}}
   {{/each}}
   {{#each shops}}
-    {{shop}}
+    <a href="/locations/{{locationId}}/shops/{{_id}}">{{shop}}</a>
     {{address}}
     {{time}}
   {{/each}}

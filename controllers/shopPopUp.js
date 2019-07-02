@@ -49,7 +49,7 @@ shopRouter.get('/', (req, res) => {
   req.body.locationId = req.params.locationId
   shopApi.getShopsByLocationId(req.params.locationId)
     .then((locationShopPopUps) => {
-      res.send(locationShopPopUps)
+      res.render('shops/singleLocationShopsOnly', {locationShopPopUps})
     })
 })
 
@@ -75,7 +75,7 @@ shopRouter.get('/:shopId/edit', (req, res) => {
 shopRouter.get('/:shopId', (req, res) => {
   shopApi.getOneShop(req.params.shopId)
     .then((shopPopUp) => {
-      res.send(shopPopUp)
+      res.render('shops/singleShopPopUp', {shopPopUp})
     })
 })
 

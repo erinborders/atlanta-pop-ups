@@ -67,7 +67,7 @@ foodRouter.get('/:foodId/edit', (req, res) => {
 foodRouter.get('/:foodId', (req, res) => {
   foodApi.getOneFood(req.params.foodId)
     .then((foodPopUp) => {
-      res.send(foodPopUp)
+      res.render('food/singleFoodPopUp', {foodPopUp})
     })
 })
 
