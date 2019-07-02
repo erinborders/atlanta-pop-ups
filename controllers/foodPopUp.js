@@ -49,7 +49,8 @@ foodRouter.post('/', (req, res) => {
   req.body.locationId = req.params.locationId
   foodApi.addFood(req.body)
     .then(() => {
-      res.send('food pop up created')
+      // res.send('food pop up created')
+      res.redirect('/locations')
     })
 })
 
@@ -74,14 +75,14 @@ foodRouter.get('/:foodId', (req, res) => {
 foodRouter.put('/:foodId', (req, res) => {
   foodApi.editFood(req.params.foodId, req.body)
     .then(() => {
-      res.send('food pop up edited')
+      res.redirect('/locations')
     })
 })
 
 foodRouter.delete('/:foodId', (req, res) => {
   foodApi.deleteFood(req.params.foodId)
     .then(() => {
-      res.send('food pop up deleted')
+      res.redirect('/locations')
     })
 })
 

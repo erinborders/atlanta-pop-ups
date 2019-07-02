@@ -57,7 +57,7 @@ shopRouter.post('/', (req, res) => {
   req.body.locationId = req.params.locationId
   shopApi.addShop(req.body)
     .then(() => {
-      res.send('shop pop up created')
+      res.redirect('/locations')
     })
 })
 
@@ -82,14 +82,14 @@ shopRouter.get('/:shopId', (req, res) => {
 shopRouter.put('/:shopId', (req, res) => {
   shopApi.editShop(req.params.shopId, req.body)
     .then(() => {
-      res.send('shop pop up edited')
+      res.redirect('/locations')
     })
 })
 
 shopRouter.delete('/:shopId', (req, res) => {
   shopApi.deleteShop(req.params.shopId)
     .then(() => {
-      res.send('shop pop up deleted')
+      res.redirect('/locations')
     })
 })
 
