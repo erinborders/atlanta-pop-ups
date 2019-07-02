@@ -1,1 +1,9 @@
 <h2>{{shopPopUp.shop}} Pop Up</h2>
+
+<form action="/locations/{{shopPopUp.locationId}}/shops/{{shopPopUp._id}}/edit" method="get">
+    <input type="submit" value="Edit Pop Up">
+</form>
+
+<form action="/locations/{{shopPopUp.locationId}}/shops/{{shopPopUp._id}}?_method=DELETE" method="post">
+    <input type="submit" value="Delete Pop Up">
+</form>
