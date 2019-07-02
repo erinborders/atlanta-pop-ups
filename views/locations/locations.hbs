@@ -14,8 +14,13 @@
     event again.
 </p>
 
-<button>Food</button>
-<button>Clothes</button>
+<form action="/locations/food" method="get">
+    <input type="submit" value="Food">
+</form>
+
+<form action="/locations/shops" method="get">
+    <input type="submit" value="Shops">
+</form>
 
 <div id="pop-ups">
     {{#each shops}}

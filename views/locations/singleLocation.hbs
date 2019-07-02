@@ -8,9 +8,22 @@
   <input type="submit" value="Delete Location" />
 </form>
 
-<button>Add a Pop Up</button>
-<button>Food</button>
-<button>Clothes</button>
+<form action="/locations/{{location._id}}/food/new" method="get">
+  <input type="submit" value="Add a Food Pop Up">
+</form>
+
+<form action="/locations/{{location._id}}/shops/new" method="get">
+  <input type="submit" value="Add a Shop Pop Up">
+</form>
+
+<form action="/locations/{{location._id}}/food" method="get">
+  <input type="submit" value="Food">
+</form>
+
+<form action="/locations/{{location._id}}/shops" method="get">
+  <input type="submit" value="Shops">
+</form>
+
 
 <div id="{{location.neighborhood}}-pop-ups">
   {{#each food}}
