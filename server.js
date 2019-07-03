@@ -61,9 +61,14 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
+
 app.use('/locations', locationRouter)
 app.use('/locations/:locationId/food', foodRouter)
 app.use('/locations/:locationId/shops', shopRouter)
+
+app.get('/', (req, res) => {
+    res.redirect('/locations')
+})
 /* Step 5
  *
  * Set the port the server is to run on
