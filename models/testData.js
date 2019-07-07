@@ -90,14 +90,9 @@ locationApi.deleteAllLocations()
     .then((downtown) => {
         foodShoppe.locationId = downtown._id
         executiveShop.locationId = downtown._id
-        let test1 = foodApi.addFood(foodShoppe)
-        let test2 = shopApi.addShop(executiveShop)
-        Promise.all([test1, test2])
-        // foodShoppe.locationId = downtown._id
-        // executiveShop.locationId = downtown._id
-        // let shoppe = foodApi.addFood(foodShoppe)
-        // let execShop = shopApi.addShop(executiveShop)
-        // Promise.all([shoppe, execShop])
+        let shoppe = foodApi.addFood(foodShoppe)
+        let execShop = shopApi.addShop(executiveShop)
+        Promise.all([shoppe, execShop])
     })
     .then(() => {
         process.exit()

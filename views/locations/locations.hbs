@@ -1,4 +1,14 @@
+<div id="side-bar">
+
 <h1>Atlanta Pop Ups</h1>
+
+<p>
+    All the pop ups in your area in one place.
+    Never miss out on your favorite store or restaurants 
+    event again.
+</p>
+
+
 
 {{#each locations}}
 <a href="/locations/{{_id}}">{{neighborhood}}</a>
@@ -8,21 +18,21 @@
     <input type="submit" value="Add a Neighborhood">
 </form>
 
-<p>
-    All the pop ups in your area in one place.
-    Never miss out on your favorite store or restaurants 
-    event again.
-</p>
+</div>
 
+<div class="food-and-shop-buttons">
 <form action="/locations/food" method="get">
-    <input type="submit" value="Food">
+    <input class="food" type="submit" value="Food">
 </form>
 
 <form action="/locations/shops" method="get">
-    <input type="submit" value="Shops">
+    <input class="shop" type="submit" value="Shops">
 </form>
+</div>
 
-<div id="pop-ups">
+<div id="main">
+
+{{!-- <div id="pop-ups"> --}}
     {{#each shops}}
         <div>
             <a href="/locations/{{locationId}}/shops/{{_id}}">{{shop}}</a>
@@ -37,4 +47,5 @@
             {{time}}
         </div>
     {{/each}}
+{{!-- </div> --}}
 </div>

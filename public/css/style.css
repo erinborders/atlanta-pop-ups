@@ -1,11 +1,74 @@
 body {
     background: aliceblue;
+    margin: 0 10vw;
+}
+
+#side-bar {
+    grid-area: 1 / 1 / span 2 / 1;
+}
+
+#food-and-shop-buttons {
+    grid-area: 1 / 2 / 1 / 2;
+    justify-content: space-between;
+    padding: 30px;
+    min-width: 100px;
+}
+
+.food {
+    display: inline;
+}
+
+.shop {
+    display: inline;
+}
+
+#main {
+    grid-area: 2 / 2 / 2 / 2;
 }
 
 h1, h2 {
     font-family: 'Lobster', cursive;
+    text-align: center;
 }
 
 p, a {
     font-family: 'Oswald', sans-serif;
+    text-align: justify;
+    text-decoration: none;
+}
+
+a {
+    display: block;
+    margin: 10px 60px;
+}
+
+a:hover {
+    color: rgb(235, 118, 235);
+}
+
+#container {
+    background-color: rgb(194, 248, 255);
+    margin: 0 auto;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 15% 85%;
+}
+
+div {
+    background-color: aliceblue;
+    border: 2px solid rgb(17, 201, 214);
+    border-radius: 15px;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+h2 {
+    background-color: aliceblue;
+    padding: 10px;
+    border: 2px solid rgb(17, 201, 214);
+    border-radius: 15px;
+    text-align: center;
+    text-shadow: 2px 2px rgb(17, 161, 180);
+    color: rgb(36, 84, 99);
 }
