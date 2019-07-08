@@ -76,7 +76,7 @@ locationApi.deleteAllLocations()
         lululemon.locationId = buckhead._id
         let brokenEgg = foodApi.addFood(anotherBrokenEgg)
         let lulu = shopApi.addShop(lululemon)
-        Promise.all([brokenEgg, lulu])
+        return Promise.all([brokenEgg, lulu])
     })
     .then(() => locationApi.addLocation(midtown))
     .then((midtown) => {
@@ -84,7 +84,7 @@ locationApi.deleteAllLocations()
         modernMystic.locationId = midtown._id
         let papis = foodApi.addFood(papisCubanGrill)
         let mystic = shopApi.addShop(modernMystic)
-        Promise.all([papis, mystic])
+        return Promise.all([papis, mystic])
     })
     .then(() => locationApi.addLocation(downtown))
     .then((downtown) => {
@@ -92,9 +92,10 @@ locationApi.deleteAllLocations()
         executiveShop.locationId = downtown._id
         let shoppe = foodApi.addFood(foodShoppe)
         let execShop = shopApi.addShop(executiveShop)
-        Promise.all([shoppe, execShop])
+        return Promise.all([shoppe, execShop])
     })
     .then(() => {
+        console.log('about to exit')
         process.exit()
     })
     .catch((err) => {

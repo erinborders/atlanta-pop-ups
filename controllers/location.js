@@ -84,6 +84,9 @@ locationRouter.get('/:locationId', (req, res) => {
     let getShops = shopApi.getShopsByLocationId(req.params.locationId)
     return Promise.all([getLocation, getFood, getShops])
         .then(([location, food, shops]) => {
+            console.log('location: ', location)
+            console.log('food: ', food)
+            console.log('shops: ', shops)
             res.render('locations/singleLocation', {location, food, shops})
         })
 })
