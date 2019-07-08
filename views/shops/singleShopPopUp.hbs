@@ -1,9 +1,21 @@
-<h2>{{shopPopUp.shop}} Pop Up</h2>
+<div class="side-bar">
+    <h2>{{shopPopUp.shop}} Pop Up</h2>
+</div>
 
-<form action="/locations/{{shopPopUp.locationId}}/shops/{{shopPopUp._id}}/edit" method="get">
-    <input type="submit" value="Edit Pop Up">
-</form>
+<div class="top-bar">
+    <form class="edit" action="/locations/{{shopPopUp.locationId}}/shops/{{shopPopUp._id}}/edit" method="get">
+        <input type="submit" value="Edit Pop Up">
+    </form>
 
-<form action="/locations/{{shopPopUp.locationId}}/shops/{{shopPopUp._id}}?_method=DELETE" method="post">
-    <input type="submit" value="Delete Pop Up">
-</form>
+    <form class="delete" action="/locations/{{shopPopUp.locationId}}/shops/{{shopPopUp._id}}?_method=DELETE" method="post">
+        <input type="submit" value="Delete Pop Up">
+    </form>
+</div>
+
+<div class="single-shop-main">
+    <p>Aesthetic: {{shopPopUp.aesthetic}}</p>
+    <p>Product: {{shopPopUp.product}}</p>
+    <p>Price: {{shopPopUp.price}}</p>
+    <p>Address: {{shopPopUp.address}}</p>
+    <p>Time: {{shopPopUp.time}}</p>
+</div>

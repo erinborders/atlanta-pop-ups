@@ -1,12 +1,20 @@
+<div class="side-bar">
 <h2>Edit Shop Pop Up Form</h2>
 
 <p>Need to make a change? Make it here!</p>
 
+{{!-- <form action="/locations/{{shop.locationId}}/shops/{{shop._id}}?_method=DELETE" method="post">
+    <input type="submit" value="Delete Pop Up">
+</form> --}}
+</div>
+
+<div class="top-bar">
 <form action="/locations" method="get">
     <input type="submit" value="Back to Home">
 </form>
+</div>
 
-<div>
+<div class="edit-shop-form-main">
     <form action="/locations/{{shop.locationId}}/shops/{{shop._id}}?_method=PUT" method="post">
     
     <label for="shop-name">Shop Name:</label>
@@ -31,10 +39,3 @@
     </form>
 </div>
 
-<form action="/locations" method="get">
-    <input type="submit" value="Back to Home">
-</form>
-
-<form action="/locations/{{shop.locationId}}/shops/{{shop._id}}?_method=DELETE" method="post">
-    <input type="submit" value="Delete Pop Up">
-</form>

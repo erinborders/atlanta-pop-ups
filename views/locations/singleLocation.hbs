@@ -1,9 +1,5 @@
+<div class="side-bar">
 <h2>{{location.neighborhood}} Pop Ups</h2>
-
-<div>
-<form action="/locations" method="get">
-    <input type="submit" value="Back to Home">
-</form>
 
 <form method="POST" action="/locations/{{location._id}}?_method=DELETE">
   <input type="submit" value="Delete Location" />
@@ -17,25 +13,38 @@
   <input type="submit" value="Add a Shop Pop Up">
 </form>
 
-<form action="/locations/{{location._id}}/food" method="get">
+</div>
+
+
+<div class="top-bar">
+<form class="back-home" action="/locations" method="get">
+    <input type="submit" value="Back to Home">
+</form>
+
+<form class="food" action="/locations/{{location._id}}/food" method="get">
   <input type="submit" value="Food">
 </form>
 
-<form action="/locations/{{location._id}}/shops" method="get">
+<form class="shop" action="/locations/{{location._id}}/shops" method="get">
   <input type="submit" value="Shops">
 </form>
+
 </div>
 
 
 <div id="{{location.neighborhood}}-pop-ups">
+  <div>
   {{#each food}}
     <a href="/locations/{{locationId}}/food/{{_id}}">{{restaurant}}</a>
     {{address}}
     {{time}}
   {{/each}}
+  </div>
+  <div>
   {{#each shops}}
     <a href="/locations/{{locationId}}/shops/{{_id}}">{{shop}}</a>
     {{address}}
     {{time}}
   {{/each}}
+  </div>
 </div>

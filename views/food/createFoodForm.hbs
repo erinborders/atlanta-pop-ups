@@ -1,12 +1,16 @@
+<div class="side-bar">
 <h2>Add a Food Pop Up</h2>
 
 <p>Got a new event coming up? Add it!</p>
+</div>
 
+<div class="top-bar">
 <form action="/locations" method="get">
     <input type="submit" value="Back to Home">
 </form>
+</div>
 
-<div>
+<div class="add-food-form-main">
     <form action="/locations/{{locationId}}/food" method="post">
     
     <label for="restaurant-name">Restaurant Name:</label>
@@ -28,6 +32,3 @@
     </form>
 </div>
 
-<form action="/locations" method="get">
-    <input type="submit" value="Back to Home">
-</form>

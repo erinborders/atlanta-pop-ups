@@ -3,27 +3,36 @@ body {
     margin: 0 10vw;
 }
 
-#side-bar {
+.side-bar {
     grid-area: 1 / 1 / span 2 / 1;
+    align-items: stretch;
+    padding: 100px 15px;
 }
 
-#food-and-shop-buttons {
+.top-bar {
     grid-area: 1 / 2 / 1 / 2;
-    justify-content: space-between;
-    padding: 30px;
-    min-width: 100px;
+    align-self: center;
 }
 
-.food {
+.food, .shop, .back-home, .edit, .delete {
     display: inline;
+    left: 40x;
+    margin: 10px 20px;
 }
 
-.shop {
-    display: inline;
-}
-
-#main {
+.main {
     grid-area: 2 / 2 / 2 / 2;
+}
+
+.add-neighborhood-main, .single-shop-main, .single-food-main, .location-food-main, .location-shop-main {
+    grid-area: 2 / 2 / 2 / 2;
+    width: 700px;
+}
+
+.add-food-form-main, .add-shop-form-main, .edit-shop-form-main, .edit-food-form-main {
+    grid-area: 2 / 2 / 2 / 2;
+    padding: 20px 100px;
+    margin: 15px;
 }
 
 h1, h2 {
@@ -46,11 +55,11 @@ a:hover {
     color: rgb(235, 118, 235);
 }
 
-#container {
+.container {
     background-color: rgb(194, 248, 255);
     margin: 0 auto;
     height: 100vh;
-    display: grid;
+    display: inline-grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: 15% 85%;
 }

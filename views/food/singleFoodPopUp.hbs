@@ -1,9 +1,21 @@
+<div class="side-bar">
 <h2>{{foodPopUp.restaurant}} Pop Up</h2>
+</div>
 
-<form action="/locations/{{foodPopUp.locationId}}/food/{{foodPopUp._id}}/edit" method="get">
+<div class="top-bar">
+<form class="edit" action="/locations/{{foodPopUp.locationId}}/food/{{foodPopUp._id}}/edit" method="get">
     <input type="submit" value="Edit Pop Up">
 </form>
 
-<form action="/locations/{{foodPopUp.locationId}}/food/{{foodPopUp._id}}?_method=DELETE" method="post">
+<form class="delete" action="/locations/{{foodPopUp.locationId}}/food/{{foodPopUp._id}}?_method=DELETE" method="post">
     <input type="submit" value="Delete Pop Up">
 </form>
+</div>
+
+<div class="single-food-main">
+    <p>Restaurant: {{foodPopUp.restaurant}}</p>
+    <p>Cuisine: {{foodPopUp.cuisine}}</p>
+    <p>Price: {{foodPopUp.price}}</p>
+    <p>Address: {{foodPopUp.address}}</p>
+    <p>Time: {{foodPopUp.time}}</p>
+</div>

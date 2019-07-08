@@ -1,9 +1,19 @@
+<div class="side-bar">
 <h2>Food Pop Ups</h2>
+</div>
 
-<form action="/locations" method="get">
+<div class="top-bar">
+    <form action="/locations" method="get">
     <input type="submit" value="Back to Home">
 </form>
+</div>
 
+<div class="location-food-main">
 {{#each locationFoodPopUps}}
+    <div>
     <a href="/locations/{{locationId}}/food/{{_id}}">{{restaurant}}</a>
+    {{address}}
+    {{time}}
+    </div>
 {{/each}}
+</div>

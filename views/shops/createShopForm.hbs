@@ -1,12 +1,16 @@
+<div class="side-bar">
 <h2>Add a Shop Pop Up</h2>
 
 <p>Got a new event coming up? Add it!</p>
+</div>
 
+<div class="top-bar">
 <form action="/locations" method="get">
     <input type="submit" value="Back to Home">
 </form>
+</div>
 
-<div>
+<div class="add-shop-form-main">
     <form action="/locations/{{locationId}}/shops" method="post">
     
     <label for="shop-name">Shop Name:</label>
@@ -31,6 +35,3 @@
     </form>
 </div>
 
-<form action="/locations" method="get">
-    <input type="submit" value="Back to Home">
-</form>
