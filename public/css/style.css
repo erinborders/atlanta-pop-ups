@@ -35,6 +35,10 @@ body {
     margin: 15px;
 }
 
+.add, .delete {
+    margin: 10px;
+}
+
 h1, h2 {
     font-family: 'Lobster', cursive;
     text-align: center;
