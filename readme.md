@@ -3,7 +3,7 @@
 # Links
 
 - Trello link: https://trello.com/b/uXxqSrod/project-2
-- Project link:
+- Project link: https://radiant-mesa-73524.herokuapp.com/locations
 
 # Overview
 
