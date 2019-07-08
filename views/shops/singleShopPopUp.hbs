@@ -4,11 +4,11 @@
 
 <div class="top-bar">
     <form class="edit" action="/locations/{{shopPopUp.locationId}}/shops/{{shopPopUp._id}}/edit" method="get">
-        <input type="submit" value="Edit Pop Up">
+        <input class="btn btn-success" type="submit" value="Edit Pop Up">
     </form>
 
     <form class="delete" action="/locations/{{shopPopUp.locationId}}/shops/{{shopPopUp._id}}?_method=DELETE" method="post">
-        <input type="submit" value="Delete Pop Up">
+        <input class="btn btn-danger" type="submit" value="Delete Pop Up">
     </form>
 </div>
 

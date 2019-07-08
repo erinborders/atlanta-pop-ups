@@ -2,15 +2,15 @@
 <h2>{{location.neighborhood}} Pop Ups</h2>
 
 <form method="POST" action="/locations/{{location._id}}?_method=DELETE">
-  <input type="submit" value="Delete Location" />
+  <input class="btn btn-danger" type="submit" value="Delete Location" />
 </form>
 
 <form action="/locations/{{location._id}}/food/new" method="get">
-  <input type="submit" value="Add a Food Pop Up">
+  <input class="btn btn-success" type="submit" value="Add a Food Pop Up">
 </form>
 
 <form action="/locations/{{location._id}}/shops/new" method="get">
-  <input type="submit" value="Add a Shop Pop Up">
+  <input class="btn btn-success" type="submit" value="Add a Shop Pop Up">
 </form>
 
 </div>
@@ -18,15 +18,15 @@
 
 <div class="top-bar">
 <form class="back-home" action="/locations" method="get">
-    <input type="submit" value="Back to Home">
+    <input class="btn btn-info" type="submit" value="Back to Home">
 </form>
 
 <form class="food" action="/locations/{{location._id}}/food" method="get">
-  <input type="submit" value="Food">
+  <input class="btn btn-info" type="submit" value="Food">
 </form>
 
 <form class="shop" action="/locations/{{location._id}}/shops" method="get">
-  <input type="submit" value="Shops">
+  <input class="btn btn-info" type="submit" value="Shops">
 </form>
 
 </div>
